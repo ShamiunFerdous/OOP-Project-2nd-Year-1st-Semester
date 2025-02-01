@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.EmployeeController">
+   <!-- First view -->
+   <AnchorPane fx:id="customer_dashboard" prefHeight="558.0" prefWidth="769.0">
+      <children>
+         <AnchorPane fx:id="left_form" layoutX="-4.0" layoutY="52.0" prefHeight="506.0" prefWidth="190.0" style="-fx-background-color: transparent;">
+            <children>
+               <ImageView fx:id="user_img" fitHeight="101.0" fitWidth="100.0" layoutX="47.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@man.png" />
+                  </image>
+               </ImageView>
+               <Label fx:id="welcome" contentDisplay="CENTER" layoutX="50.0" layoutY="146.0" prefHeight="23.0" prefWidth="93.0" style="-fx-font-family: 'Monospace'; -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Welcome," />
+               <Label fx:id="employeeName" alignment="CENTER" contentDisplay="CENTER" layoutX="23.0" layoutY="169.0" prefHeight="23.0" prefWidth="146.0" style="-fx-font-family: 'Monospace'; -fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Employee Name" />
+               <Button fx:id="logOut" layoutX="10.0" layoutY="350.0" mnemonicParsing="false" onAction="#logout" prefHeight="30.0" prefWidth="178.0" style="-fx-background-color: #e7f3ff; -fx-text-fill: black; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-padding: 5 10; -fx-border-color: blue; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 5;" text="Log Out" />
+               <Button fx:id="messenger_server" layoutX="10.0" layoutY="300.0" mnemonicParsing="false" onAction="#ServerMessenger" prefHeight="30.0" prefWidth="177.0" style="-fx-background-color: #e7f3ff; -fx-text-fill: black; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-padding: 5 10; -fx-border-color: blue; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 5;" text="Messenger" />
+            </children>
+         </AnchorPane>
+
+         <BorderPane fx:id="up_level" layoutX="2.0" layoutY="1.0" prefHeight="40.0" prefWidth="798.0" style="-fx-background-color: #e6f2ff; -fx-border-color: blue; -fx-border-width: 2; -fx-border-radius: 5; -fx-padding: 5;">
+            <center>
+               <Label prefHeight="27.0" prefWidth="240.0" style="-fx-font-family: 'Monospace'; -fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Employee Dashboard" BorderPane.alignment="CENTER" />
+            </center>
+         </BorderPane>
+
+         <TableView fx:id="purchase_tableview" layoutX="190.0" layoutY="47.0" prefHeight="514.0" prefWidth="354.0" style="-fx-border-color: blue; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color: transparent;">
+            <columns>
+               <TableColumn fx:id="purchase_col_brandname" prefWidth="83.19999694824219" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-font-family: 'Monospace'; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: black; -fx-alignment: CENTER;" text="Brand Name" />
+               <TableColumn fx:id="purchase_col_productname_name" prefWidth="83.20001220703125" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-font-family: 'Monospace'; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: black; -fx-alignment: CENTER;" text="Product Name" />
+               <TableColumn fx:id="purchase_col_quantity" prefWidth="89.5999755859375" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: black; -fx-alignment: CENTER;" text="Quantity" />
+               <TableColumn fx:id="purchase_col_price" prefWidth="89.5999755859375" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: black; -fx-alignment: CENTER;" text="Price" />
+            </columns>
+         </TableView>
+
+
+
+         <AnchorPane fx:id="right_form" layoutX="550.0" layoutY="48.0" prefHeight="513.0" prefWidth="250.0" style="-fx-background-color: transparent; -fx-border-color: blue; -fx-border-width: 2; -fx-border-radius: 5;">
+            <children>
+               <Label layoutX="28.0" layoutY="35.0" prefHeight="18.0" prefWidth="71.0" style="-fx-font-family: 'Monospace'; -fx-font-size: 11; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Brand Name" />
+               <TextField fx:id="purchase_brand" layoutX="109.0" layoutY="29.0" prefHeight="29.0" prefWidth="126.0" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-border-radius: 5; -fx-background-radius: 5;" />
+               <Spinner fx:id="purchase_quantity" layoutX="115.0" layoutY="177.0" prefHeight="26.0" prefWidth="115.0" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-border-radius: 5; -fx-background-radius: 5;" />
+               <Label layoutX="28.0" layoutY="183.0" prefHeight="18.0" prefWidth="71.0" style="-fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Quantity" />
+               <Button fx:id="purchase_addbtn" layoutX="28.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleAddButtonAction" prefHeight="30.0" prefWidth="208.0" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-border-radius: 5; -fx-background-radius: 5; -fx-text-fill: #000033;" text="Add" />
+               <Button fx:id="discardbtn" layoutX="28.0" layoutY="295.0" mnemonicParsing="false" onAction="#handleDiscardButtonAction" prefHeight="30.0" prefWidth="208.0" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-border-radius: 5; -fx-background-radius: 5; -fx-text-fill: #000033;" text="Discard" />
+               <Label fx:id="total" layoutX="64.0" layoutY="373.0" prefHeight="18.0" prefWidth="67.0" style="-fx-font-family: 'Monospace'; -fx-font-size: 15; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Total:" />
+               <Label fx:id="purchase_totalprice" layoutX="132.0" layoutY="373.0" prefHeight="18.0" prefWidth="67.0" style="-fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-text-fill: #333333;" text="0.00" />
+               <Button fx:id="purchase_paybtn" layoutX="28.0" layoutY="411.0" mnemonicParsing="false" onAction="#handlePayButtonAction" prefHeight="30.0" prefWidth="208.0" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-border-radius: 5; -fx-background-radius: 5; -fx-text-fill: #000033;" text="Pay" />
+               <Button fx:id="purchase_clearallbtn" layoutX="27.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleClearAllButtonAction" prefHeight="30.0" prefWidth="208.0" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-border-radius: 5; -fx-background-radius: 5; -fx-text-fill: #000033;" text="Clear All" />
+               <Button fx:id="purchase_searchbtn" layoutX="28.0" layoutY="219.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" prefHeight="30.0" prefWidth="208.0" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-border-radius: 5; -fx-background-radius: 5; -fx-text-fill: #000033;" text="Search" />
+               <ListView fx:id="product_list" layoutX="28.0" layoutY="67.0" prefHeight="90.0" prefWidth="208.0" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-border-radius: 5; -fx-background-radius: 5;" />
+            </children>
+         </AnchorPane>
+      </children>
+   </AnchorPane>
+
+   <!-- Second view -->
+   <AnchorPane fx:id="receipt_form" prefHeight="600" prefWidth="400" style="-fx-background-color: transparent; -fx-border-color: blue; -fx-border-width: 2; -fx-border-radius: 5;" visible="false">
+      <children>
+         <Label fx:id="receiptTitle" layoutX="347.0" layoutY="35.0" style="-fx-font-family: 'Monospace'; -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Receipt" />
+         <Label fx:id="customerNameLabel" layoutX="280.0" layoutY="66.0" prefHeight="48.0" prefWidth="238.0" style="-fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-text-fill: #333333;" text="Thank you for your purchase." />
+         <TableView fx:id="receiptTable" layoutX="206.0" layoutY="124.0" prefHeight="300" prefWidth="367.0" style="-fx-border-color: blue; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color: transparent;">
+            <columns>
+               <TableColumn fx:id="brandColumn" prefWidth="100" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: black;" text="Brand" />
+               <TableColumn fx:id="productColumn" prefWidth="100" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: black;" text="Product" />
+               <TableColumn fx:id="quantityColumn" prefWidth="87.20001220703125" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: black;" text="Quantity" />
+               <TableColumn fx:id="priceColumn" prefWidth="72.79998779296875" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: black;" text="Price" />
+            </columns>
+         </TableView>
+         <Label fx:id="totalPriceLabel" layoutX="280.0" layoutY="441.0" style="-fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Total Price: " />
+         <Label fx:id="totalPriceValueLabel" layoutX="389.0" layoutY="440.0" prefHeight="20.0" prefWidth="126.0" style="-fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="0.00" />
+         <Button fx:id="back_button" layoutX="287.0" layoutY="479.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="30.0" prefWidth="94.0" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-border-radius: 5; -fx-background-radius: 5; -fx-text-fill: #000033;" text="Back" />
+         <Button fx:id="print_receipt" layoutX="405.0" layoutY="479.0" mnemonicParsing="false" onAction="#PrintReceipt" prefHeight="30.0" prefWidth="94.0" style="-fx-border-color: blue; -fx-border-width: 2; -fx-background-color: #e6f2ff; -fx-font-family: 'Monospace'; -fx-font-size: 14px; -fx-border-radius: 5; -fx-background-radius: 5; -fx-text-fill: #000033;" text="print" />
+      </children>
+   </AnchorPane>
+
+</StackPane>

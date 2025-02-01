@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: linear-gradient(to bottom, #6699ff 0%, #66ffff 100%);;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="315.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="99.0" layoutY="371.0" text="Welcome">
+                     <font>
+                        <Font name="Kalpurush" size="34.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="140.0" layoutY="411.0" text="To">
+                     <font>
+                        <Font name="Kalpurush" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="24.0" layoutY="442.0" text="CSEDU Supermarket">
+                     <font>
+                        <Font name="Kalpurush" size="35.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="268.0" fitWidth="390.0" layoutX="-39.0" layoutY="159.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@cart-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Hyperlink fx:id="customer_hyperLink" layoutX="101.0" layoutY="528.0" onAction="#linkswap" prefHeight="36.0" prefWidth="136.0" text="Use as a customer" textFill="#460000">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="admin_form" layoutX="350.0" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: linear-gradient(to bottom, #00ffff 0%, #ccffff 00%);">
+               <children>
+                  <ImageView fx:id="someImageView1" blendMode="SOFT_LIGHT" fitHeight="314.0" fitWidth="305.0" layoutX="23.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@user.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="95.0" layoutY="250.0" text="Admin Sign In">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="admin_loginBtn" layoutX="128.0" layoutY="435.0" mnemonicParsing="false" onAction="#adminLogin" prefHeight="39.0" prefWidth="78.0" style="-fx-border-radius: 10; -fx-background-color: linear-gradient(to bottom, #000099 0%, #0066cc 50%); -fx-font-size: 15;" text="Login" />
+                  <Hyperlink fx:id="admin_hyperLink" layoutX="67.0" layoutY="499.0" onAction="#linkswap" text="Login Employee Account">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Hyperlink>
+                  <PasswordField fx:id="admin_password" layoutX="30.0" layoutY="358.0" onAction="#adminLogin" prefHeight="39.0" prefWidth="273.0" promptText="Admin Password" />
+                  <TextField fx:id="admin_username" layoutX="30.0" layoutY="310.0" onAction="#adminLogin" prefHeight="35.0" prefWidth="273.0" promptText="Admin Username" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="employee_form" layoutX="345.0" layoutY="10.0" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: linear-gradient(to bottom, #00ffff 0%, #ccffff 00%);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fx:id="someImageView2" blendMode="SOFT_LIGHT" disable="true" fitHeight="342.0" fitWidth="305.0" layoutX="23.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@user.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="78.0" layoutY="253.0" text="Employee Sign In">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="employee_loginBtn" layoutX="124.0" layoutY="440.0" mnemonicParsing="false" onAction="#employeeLogin" prefHeight="39.0" prefWidth="78.0" style="-fx-border-radius: 10; -fx-background-color: linear-gradient(to bottom, #000099 0%, #0066cc 50%); -fx-font-size: 15;" text="Login" />
+                  <Hyperlink fx:id="employee_hyperlink" layoutX="80.0" layoutY="500.0" onAction="#linkswap" text="Login Admin Account">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Hyperlink>
+                  <TextField fx:id="employee_username" layoutX="27.0" layoutY="316.0" onAction="#employeeLogin" prefHeight="39.0" prefWidth="273.0" promptText="Employee Username" />
+                  <PasswordField fx:id="employee_password" layoutX="27.0" layoutY="367.0" onAction="#employeeLogin" prefHeight="39.0" prefWidth="273.0" promptText="Employee Password" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

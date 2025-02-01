@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="657.0" fitWidth="900.0" layoutY="-1.0" opacity="0.22" pickOnBounds="true">
+               <image>
+                  <Image url="@shop.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="admin_form" layoutX="265.0" layoutY="65.0" prefHeight="522.0" prefWidth="394.0" style="-fx-background-color: #FAF9F6; -fx-background-radius: 5;">
+               <children>
+                  <ImageView fx:id="someImageView1" fitHeight="93.0" fitWidth="122.0" layoutX="150.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@user.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="admin_username" layoutX="64.0" layoutY="261.0" onAction="#adminLogin" prefHeight="40.0" prefWidth="265.0" promptText="Admin Username" style="-fx-border-color: violet; -fx-border-width: 2px; -fx-background-color: #f3e5f5; -fx-prompt-text-fill: gray; -fx-font-size: 16px; -fx-border-radius: 2; -fx-background-radius: 2; -fx-font-family: 'monospace';" />
+                  <Label layoutX="117.0" layoutY="211.0" style="-fx-text-fill: #333; -fx-font-family: 'monospace'; -fx-font-weight: bold;" text="Admin Login">
+                     <font>
+                        <Font name="monospace" size="24.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="admin_password" layoutX="64.0" layoutY="309.0" onAction="#adminLogin" prefHeight="40.0" prefWidth="265.0" promptText="Admin Password" style="-fx-border-color: violet; -fx-border-width: 2px; -fx-background-color: #f3e5f5; -fx-prompt-text-fill: gray; -fx-font-size: 16px; -fx-border-radius: 2; -fx-background-radius: 2; -fx-font-family: 'monospace';" />
+                  <Button fx:id="admin_loginBtn" layoutX="147.0" layoutY="370.0" mnemonicParsing="false" onAction="#adminLogin" prefHeight="35.0" prefWidth="100.0" style="-fx-border-color: violet; -fx-border-width: 2px; -fx-background-color: #edd6f1; -fx-background-radius: 5; -fx-text-fill: #3d0f44; -fx-font-size: 16px; -fx-font-family: 'monospace'; -fx-border-radius: 3;" text="Login">
+                     <font>
+                        <Font name="monospace" size="15.0" />
+                     </font>
+                  </Button>
+                  <Hyperlink fx:id="admin_hyperLink" layoutX="120.0" layoutY="444.0" onAction="#linkswap" style="-fx-text-fill: #1E88E5; -fx-font-size: 14px; -fx-font-family: 'monospace';" text="Login as employee" />
+                  <Hyperlink fx:id="customer_hyperLink" layoutX="119.0" layoutY="474.0" onAction="#linkswap" prefHeight="24.0" prefWidth="153.0" style="-fx-font-family: 'monospace'; -fx-font-size: 14px;" text="Use as a customer" textFill="#e59412">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label layoutX="117.0" layoutY="21.0" prefHeight="36.0" prefWidth="159.0" style="-fx-font-size: 26px; -fx-font-family: 'monospace'; -fx-font-weight: bold; -fx-text-fill: black;" text="Welcome to" />
+                  <Label layoutX="59.0" layoutY="50.0" prefHeight="32.0" prefWidth="274.0" style="-fx-font-size: 26px; -fx-font-family: 'monospace'; -fx-font-weight: bold; -fx-text-fill: black;" text="CSEDU Supermarket" />
+
+
+               </children>
+            </AnchorPane>
+
+            <AnchorPane fx:id="employee_form" layoutX="265.0" layoutY="65.0" prefHeight="522.0" prefWidth="394.0" style="-fx-background-color: #FAF9F6; -fx-background-radius: 5;" visible="false">
+               <children>
+                  <ImageView fx:id="someImageView2" fitHeight="93.0" fitWidth="122.0" layoutX="150.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@user.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="employee_username" layoutX="64.0" layoutY="261.0" onAction="#employeeLogin" prefHeight="40.0" prefWidth="265.0" promptText="Employee Username" style="-fx-border-color: #ea9339; -fx-border-width: 2px; -fx-background-color: #f1e7bd; -fx-prompt-text-fill: gray; -fx-font-size: 16px; -fx-border-radius: 2; -fx-background-radius: 2; -fx-font-family: 'monospace';" />
+                  <Label layoutX="96.0" layoutY="212.0" style="-fx-text-fill: #333; -fx-font-family: 'monospace'; -fx-font-weight: bold;" text="Employee Login">
+                     <font>
+                        <Font name="monospace" size="24.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="employee_password" layoutX="64.0" layoutY="309.0" onAction="#employeeLogin" prefHeight="40.0" prefWidth="265.0" promptText="Employee Password" style="-fx-border-color: #ea9339; -fx-border-width: 2px; -fx-background-color: #f1e7bd; -fx-prompt-text-fill: gray; -fx-font-size: 16px; -fx-border-radius: 2; -fx-background-radius: 2; -fx-font-family: 'monospace';" />
+                  <Button fx:id="employee_loginBtn" layoutX="147.0" layoutY="370.0" mnemonicParsing="false" onAction="#employeeLogin" prefHeight="35.0" prefWidth="100.0" style="-fx-border-color: #ea9339; -fx-border-width: 2px; -fx-background-color: #f1e7bd; -fx-background-radius: 5; -fx-text-fill: #75281b; -fx-font-size: 16px; -fx-font-family: 'monospace'; -fx-border-radius: 3;" text="Login">
+                     <font>
+                        <Font name="monospace" size="15.0" />
+                     </font>
+                  </Button>
+                  <Hyperlink fx:id="employee_hyperlink" layoutX="132.0" layoutY="443.0" onAction="#linkswap" style="-fx-text-fill: #1E88E5; -fx-font-size: 14px; -fx-font-family: 'monospace';" text="Login as admin" />
+                  <Hyperlink fx:id="customer_hyperLink2" layoutX="119.0" layoutY="474.0" onAction="#linkswap" prefHeight="24.0" prefWidth="153.0" style="-fx-font-family: 'monospace'; -fx-font-size: 14px;" text="Use as a customer" textFill="#e59412">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label layoutX="117.0" layoutY="21.0" prefHeight="36.0" prefWidth="159.0" style="-fx-font-size: 26px; -fx-font-family: 'monospace'; -fx-font-weight: bold; -fx-text-fill: black;" text="Welcome to" />
+                  <Label layoutX="59.0" layoutY="50.0" prefHeight="32.0" prefWidth="274.0" style="-fx-font-size: 26px; -fx-font-family: 'monospace'; -fx-font-weight: bold; -fx-text-fill: black;" text="CSEDU Supermarket" />
+               </children>
+            </AnchorPane>
+
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

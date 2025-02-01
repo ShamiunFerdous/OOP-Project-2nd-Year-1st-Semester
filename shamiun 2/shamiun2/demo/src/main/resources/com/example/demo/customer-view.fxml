@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.CustomerController">
+    <children>
+        <AnchorPane fx:id="form" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: white;">
+            <children>
+                <AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: linear-gradient(to bottom, #6699ff 0%, #66ffff 100%);;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="315.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Label layoutX="99.0" layoutY="371.0" text="Welcome">
+                            <font>
+                                <Font name="Kalpurush" size="34.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="140.0" layoutY="411.0" text="To">
+                            <font>
+                                <Font name="Kalpurush" size="30.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="442.0" text="CSEDU Supermarket">
+                            <font>
+                                <Font name="Kalpurush" size="35.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="268.0" fitWidth="390.0" layoutX="-55.0" layoutY="162.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@cart-removebg-preview.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="login_form" layoutX="350.0" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: linear-gradient(to bottom, #00ffff 0%, #ccffff 00%);">
+                    <children>
+                        <ImageView fx:id="someImageView1" blendMode="SOFT_LIGHT" fitHeight="314.0" fitWidth="305.0" layoutX="23.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@user.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="141.0" layoutY="232.0" text="Login ">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="loginBtn" layoutX="128.0" layoutY="435.0" mnemonicParsing="false" onAction="#login" prefHeight="39.0" prefWidth="78.0" style="-fx-border-radius: 10; -fx-background-color: linear-gradient(to bottom, #000099 0%, #0066cc 50%); -fx-font-size: 15;" text="Login" textFill="#f8f6f6" />
+                        <Hyperlink fx:id="login_hyperlink" layoutX="82.0" layoutY="498.0" onAction="#Linkswap" text="Don't have an account?">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </Hyperlink>
+                        <PasswordField fx:id="customer_password" layoutX="40.0" layoutY="355.0" onAction="#login" prefHeight="39.0" prefWidth="273.0" promptText="Password" />
+                        <TextField fx:id="customer_username" layoutX="40.0" layoutY="300.0" onAction="#login" prefHeight="35.0" prefWidth="273.0" promptText="Username" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="register_form" layoutX="345.0" layoutY="10.0" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: linear-gradient(to bottom, #00ffff 0%, #ccffff 00%);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <ImageView fx:id="someImageView2" blendMode="SOFT_LIGHT" disable="true" fitHeight="359.0" fitWidth="350.0" layoutX="7.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@user.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="132.0" layoutY="67.0" text="Register">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="registerBtn" layoutX="140.0" layoutY="502.0" mnemonicParsing="false" onAction="#register" prefHeight="39.0" prefWidth="78.0" style="-fx-border-radius: 10; -fx-background-color: linear-gradient(to bottom, #000099 0%, #0066cc 50%); -fx-font-size: 15;" text="Register" textFill="#f8eeee" />
+                        <TextField fx:id="name" layoutX="39.0" layoutY="121.0" onAction="#register" prefHeight="39.0" prefWidth="273.0" promptText="Name" />
+                        <PasswordField fx:id="register_password" layoutX="39.0" layoutY="379.0" onAction="#register" prefHeight="39.0" prefWidth="273.0" promptText="Password" />
+                  <TextField fx:id="email" layoutX="39.0" layoutY="184.0" onAction="#register" prefHeight="39.0" prefWidth="273.0" promptText="Email" />
+                  <TextField fx:id="register_username" layoutX="39.0" layoutY="315.0" onAction="#register" prefHeight="39.0" prefWidth="273.0" promptText="username" />
+                  <Hyperlink fx:id="register_hyperLink" layoutX="95.0" layoutY="551.0" onAction="#Linkswap" text="Back to log in page">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
+                  <TextField fx:id="gender" layoutX="41.0" layoutY="249.0" onAction="#register" prefHeight="39.0" prefWidth="273.0" promptText="Gender" />
+                  <PasswordField fx:id="confirm_password" layoutX="39.0" layoutY="440.0" onAction="#register" prefHeight="39.0" prefWidth="273.0" promptText="Confirm Password" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
